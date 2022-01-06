@@ -1,11 +1,16 @@
 import styled from 'styled-components'
 import React from 'react';
 import { useSelector } from 'react-redux'
-import FlexRowContainer from './FlexRowContainer';
 import HighlightsIcon from './HighlightsIcon';
 import UVicon from './UVicon';
 import WindIcon from './WindIcon';
 
+const FlexRowContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`
 const PrettyDiv = styled.div`
   height: 12rem;
   width: 16rem;
@@ -17,7 +22,7 @@ const PrettyDiv = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   padding: 1rem 2rem 1rem 2rem;
-`;
+`
 const CoolHeading = styled.div`
   color: #8b84849b;
   font-size: 1.25rem;

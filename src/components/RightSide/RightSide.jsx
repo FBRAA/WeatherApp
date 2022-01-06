@@ -1,10 +1,16 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
-import FlexRowContainer from './FlexRowContainer'
-import WeekForecast from './WeekForecast'
+import WeekForecast from '../WeekForecast'
 import TopRightRow from './TopRightRow'
-import PrettyHighlights from './PrettyHighlights'
+import PrettyHighlights from '../PrettyHighlights'
+
+const FlexRowContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`
 
 const TodaysHighlightsHeader = styled.div`
   font-weight: bold;

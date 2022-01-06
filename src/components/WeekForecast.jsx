@@ -1,8 +1,14 @@
 import styled from 'styled-components'
 import React from 'react';
 import { useSelector } from 'react-redux'
-import FlexRowContainer from './FlexRowContainer';
 import ForecastIcon from './ForecastIcon'
+
+const FlexRowContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`
 
 const WeekForecast = ({ setChosenDay }) => {
   const makeWeekDay = (dt) => {
