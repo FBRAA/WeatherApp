@@ -8,7 +8,9 @@ const fetchData = async (url) => {
     const data = await response.json();
     return data
   } catch (error) {
-    return fetchData(defaultURL)
+    alert(error)
+    console.log(error)
+
     // нужно сделать другой хендлер ошибок, а не дефолт
   }
 };
