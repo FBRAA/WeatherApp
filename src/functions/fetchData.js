@@ -1,5 +1,5 @@
-const key = process.env.REACT_APP_API_KEY
-const defaultURL = `http://api.openweathermap.org/data/2.5/weather?q=Saint Petersburg&APPID=${key}&units=metric`
+// const key = process.env.REACT_APP_API_KEY
+// const defaultURL = `http://api.openweathermap.org/data/2.5/weather?q=Saint Petersburg&APPID=${key}&units=metric`
 
 const fetchData = async (url) => {
   try {
@@ -8,8 +8,7 @@ const fetchData = async (url) => {
     const data = await response.json();
     return data
   } catch (error) {
-    alert(error)
-    console.log(error)
+    return console.log(error)
 
     // нужно сделать другой хендлер ошибок, а не дефолт
   }
