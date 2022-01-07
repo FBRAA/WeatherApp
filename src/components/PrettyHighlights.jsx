@@ -32,6 +32,13 @@ const PrettyDiv = styled.div`
 const CoolHeading = styled.div`
   color: #8b84849b;
   font-size: 1.25rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* width: 17rem;
+  @media (max-width: 815px) {
+    width: 14rem;
+  } */
 `
 const InformationLine = styled.div`
   font-size: 2.5rem;
@@ -132,7 +139,7 @@ const PrettyHighlights = ({ chosenDay, unitsObj }) => {
         </InformationLine>
       </PrettyDiv>
       <PrettyDiv>
-        <CoolHeading>Sunrise & Sunset</CoolHeading>
+        <CoolHeading>Sunrise & sunset</CoolHeading>
         <SunLine>
           <HighlightsIcon mainWeather="sunrise" />
           {new Date(sunrise * 1000).toLocaleTimeString('en-US')}
