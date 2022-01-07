@@ -1,4 +1,4 @@
-# Weather app made with React.JS Toolkit
+# Weather app made with React.JS + Redux Toolkit
 
 ![Website screenshot](https://user-images.githubusercontent.com/62832519/148560110-d48853fd-7889-4609-bb58-3fdf7ab58276.png)
 
