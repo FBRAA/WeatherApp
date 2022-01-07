@@ -35,10 +35,6 @@ const CoolHeading = styled.div`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  /* width: 17rem;
-  @media (max-width: 815px) {
-    width: 14rem;
-  } */
 `
 const InformationLine = styled.div`
   font-size: 2.5rem;

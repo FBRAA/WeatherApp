@@ -12,6 +12,10 @@ const HighlightsIcon = ({ mainWeather }) => {
     width: 4rem;
     height: 4rem;
     object-fit: cover;
+    @media (max-width: 815px) {
+      width: 3rem;
+      height: 3rem;
+  }
   `
   const choosePic = allTypes.find((type) => type.name === mainWeather)
   return (
