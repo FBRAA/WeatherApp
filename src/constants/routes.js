@@ -1,7 +1,7 @@
 const key = process.env.REACT_APP_API_KEY
 
 const routes = {
-  weather: 'http://api.openweathermap.org/data/2.5/weather?q=',
+  weather: 'https://api.openweathermap.org/data/2.5/weather?q=',
   forecast: 'https://api.openweathermap.org/data/2.5/onecall?lat=',
 }
 

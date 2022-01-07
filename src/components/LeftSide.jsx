@@ -84,8 +84,8 @@ const LeftSide = ({ unitsObj }) => {
   const fetchedCity = useSelector((store) => store.weather.city)
   const city = 'Saint Petersburg'
   const [inputCity, setInputCity] = useState('')
-  const cityURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&APPID=${key}`
-  const inputCityURL = `http://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=${units}&APPID=${key}`
+  const cityURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&APPID=${key}`
+  const inputCityURL = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=${units}&APPID=${key}`
   const inputCityForecastURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLon}&units=${units}&exclude=minutely,hourly,alerts&appid=${key}`
   const handleClick = () => {
     dispatch(getWeather(inputCityURL))

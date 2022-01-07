@@ -1,5 +1,5 @@
 // const key = process.env.REACT_APP_API_KEY
-// const defaultURL = `http://api.openweathermap.org/data/2.5/weather?q=Saint Petersburg&APPID=${key}&units=metric`
+// const defaultURL = `https://api.openweathermap.org/data/2.5/weather?q=Saint Petersburg&APPID=${key}&units=metric`
 
 const fetchData = async (url) => {
   try {
