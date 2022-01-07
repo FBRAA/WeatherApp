@@ -9,7 +9,8 @@ const AvatarImage = () => (
       alt="Dominic Coomer"
       src={Coomer}
       sx={{
-        'max-Width': '20px',
+        width: '3rem',
+        height: '3rem',
       }}
     />
   </Stack>

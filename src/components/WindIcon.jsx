@@ -9,7 +9,7 @@ const WindIcon = ({ windDir }) => {
     object-fit: cover;
   `
   return (
-    <ImageTag src={wind} windDir={windDir} alt="lule" />
+    <ImageTag src={wind} windDir={windDir} alt="wind" />
   )
 }
 

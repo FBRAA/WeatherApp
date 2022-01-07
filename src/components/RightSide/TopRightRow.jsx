@@ -4,15 +4,19 @@ import AvatarImage from './AvatarImage'
 import Switch from './Switch'
 
 const FlexRowContainer = styled.div`
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  @media (max-width: 815px) {
+  }  
 `;
 const TodaysHighlightsHeader = styled.div`
-font-weight: bold;
-margin-right: auto;
-margin-left: 1rem;
+  font-weight: bold;
+  margin-right: auto;
+  margin-left: 1rem;
+  @media (max-width: 815px) {
+    } 
 `
 const TopRightRow = ({ unitsObj, setUnitsObj }) => (
   <FlexRowContainer>

@@ -10,10 +10,12 @@ const FlexRowContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  @media (max-width: 815px) {
+  }  
 `
 const PrettyDiv = styled.div`
   height: 12rem;
-  width: 16rem;
+  width: 17rem;
   background-color: white;
   border-radius: 1.5rem;
   margin-bottom: 1rem;
@@ -22,10 +24,17 @@ const PrettyDiv = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   padding: 1rem 2rem 1rem 2rem;
+  @media (max-width: 815px) {
+    height: 10.5rem;
+    width: 14rem;
+  }
 `
 const CoolHeading = styled.div`
   color: #8b84849b;
   font-size: 1.25rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `
 const InformationLine = styled.div`
   font-size: 2.5rem;
@@ -126,7 +135,7 @@ const PrettyHighlights = ({ chosenDay, unitsObj }) => {
         </InformationLine>
       </PrettyDiv>
       <PrettyDiv>
-        <CoolHeading>Sunrise & Sunset</CoolHeading>
+        <CoolHeading>Sunrise & sunset</CoolHeading>
         <SunLine>
           <HighlightsIcon mainWeather="sunrise" />
           {new Date(sunrise * 1000).toLocaleTimeString('en-US')}

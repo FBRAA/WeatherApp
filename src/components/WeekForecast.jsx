@@ -37,6 +37,12 @@ const WeekForecast = ({ setChosenDay }) => {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: 815px) {
+      justify-content: space-around;
+      height: 9rem;
+      width: 7rem;
+      margin-bottom: 0.5rem;
+  }  
   `;
   return (
     <FlexRowContainer>
