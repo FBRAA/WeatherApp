@@ -4,7 +4,12 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
 const MetricSwitch = ({ unitsObj, setUnitsObj }) => (
-  <Stack direction="row" spacing={0} alignItems="center" sx={{ 'margin-left': 'auto', 'margin-right': '1rem' }}>
+  <Stack
+    direction="row"
+    spacing={0}
+    alignItems="center"
+    sx={{ 'margin-left': 'auto', 'margin-right': '1rem' }}
+  >
     <Typography>°F</Typography>
     <Switch
       defaultChecked
