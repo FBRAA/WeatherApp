@@ -9,7 +9,7 @@ const FlexRowContainer = styled.div`
   flex-wrap: wrap;
   align-items: center;
   @media (max-width: 815px) {
-    }  
+  }  
 `;
 const TodaysHighlightsHeader = styled.div`
   font-weight: bold;

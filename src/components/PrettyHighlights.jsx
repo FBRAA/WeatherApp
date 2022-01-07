@@ -11,12 +11,11 @@ const FlexRowContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   @media (max-width: 815px) {
-    justify-content: space-around;
   }  
 `
 const PrettyDiv = styled.div`
   height: 12rem;
-  width: 16rem;
+  width: 17rem;
   background-color: white;
   border-radius: 1.5rem;
   margin-bottom: 1rem;

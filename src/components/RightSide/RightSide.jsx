@@ -18,9 +18,7 @@ const RightStyledContainer = styled.div`
     border-top-right-radius: 0rem;
     border-top-left-radius: 0rem;
     border-bottom-left-radius: 3rem;
-    justify-content: center;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding: 0rem 3rem 1.75rem 3rem;
@@ -37,9 +35,12 @@ const FlexRowContainer = styled.div`
   `
 
 const TodaysHighlightsHeader = styled.div`
-    font-weight: bold;
-    margin-right: auto;
-    margin-left: 1rem;
+  font-weight: bold;
+  margin-right: auto;
+  margin-left: 1rem;
+    @media (max-width: 815px) {
+    padding: 1rem 0 1rem 0;
+  }  
   `
 
 const RightSide = ({ unitsObj, setUnitsObj }) => {
