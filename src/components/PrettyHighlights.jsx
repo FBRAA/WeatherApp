@@ -10,6 +10,9 @@ const FlexRowContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  @media (max-width: 815px) {
+    justify-content: space-around;
+  }  
 `
 const PrettyDiv = styled.div`
   height: 12rem;
@@ -22,6 +25,10 @@ const PrettyDiv = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   padding: 1rem 2rem 1rem 2rem;
+  @media (max-width: 815px) {
+    height: 10.5rem;
+    width: 14rem;
+  }
 `
 const CoolHeading = styled.div`
   color: #8b84849b;

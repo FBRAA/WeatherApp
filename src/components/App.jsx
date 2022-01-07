@@ -13,6 +13,12 @@ const GeneralContainer = styled.div`
   background-color: white;
   border-radius: 3rem;
   margin: auto;
+  @media (max-width: 815px) {
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
+    width: 90vw;
+  }
 `
 
 const App = () => {
