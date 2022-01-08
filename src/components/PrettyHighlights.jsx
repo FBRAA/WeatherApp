@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import HighlightsIcon from './HighlightsIcon';
 import UVicon from './UVicon';
 import WindIcon from './WindIcon';
+import windDirection from '../functions/windDirections';
 
 const FlexRowContainer = styled.div`
   display: flex;
@@ -41,50 +42,36 @@ const InformationLine = styled.div`
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-`
+  `
 const SunLine = styled.div`
   font-size: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-`
+  `
 const UnitsLine = styled.div`
   font-size: 2rem;
-`
+  `
+const WindRotater = styled.div`
+    transform: rotate(${(props) => (`${props.windDeg + 270}deg`)});
+    margin-right: 1rem;
+  `
 
 const PrettyHighlights = ({ chosenDay, unitsObj }) => {
   const weekData = useSelector((store) => store.forecast.weekData)
   // const isLoading = useSelector((store) => store.forecast.isLoading)
-  const { windSpeed } = weekData[chosenDay]
-  const { pressure } = weekData[chosenDay]
-  const { humidity } = weekData[chosenDay]
-  const { uvi } = weekData[chosenDay]
-  const feelsLike = weekData[chosenDay].feels_like
-  const { sunrise } = weekData[chosenDay]
-  const { sunset } = weekData[chosenDay]
-  const windDeg = weekData[chosenDay].wind_deg
-  // eliminating original SVG icon rotation from east to north
-  const windDir = `${windDeg + 270}deg`
-  const { degSymbol } = unitsObj
-  const { windSymbol } = unitsObj
-  const WindRotater = styled.div`
-    transform: rotate(${windDir});
-    margin-right: 1rem;
-  `
-  const windDirection = () => {
-    const directions = [
-      { deg: 22.5, dir: 'N' },
-      { deg: 67.5, dir: 'NE' },
-      { deg: 112.5, dir: 'E' },
-      { deg: 157.5, dir: 'SE' },
-      { deg: 202.5, dir: 'S' },
-      { deg: 247.5, dir: 'SW' },
-      { deg: 292.5, dir: 'W' },
-      { deg: 337.5, dir: 'NW' },
-      { deg: 360, dir: 'N' },
-    ]
-    return directions.find((elem) => windDeg < elem.deg).dir
-  }
+  const {
+    windSpeed,
+    pressure,
+    humidity,
+    uvi,
+    sunrise,
+    sunset,
+    feelsLike,
+    windDeg,
+  } = weekData[chosenDay]
+  const { degSymbol, windSymbol } = unitsObj
+
   return (
     <FlexRowContainer>
       <PrettyDiv>
@@ -104,11 +91,11 @@ const PrettyHighlights = ({ chosenDay, unitsObj }) => {
         </InformationLine>
         {(windDeg || windDeg === 0) && (
           <InformationLine>
-            <WindRotater>
-              <WindIcon windDir={{ windDir }} />
+            <WindRotater windDeg={windDeg}>
+              <WindIcon />
             </WindRotater>
             <UnitsLine>
-              {windDirection()}
+              {windDirection(windDeg)}
             </UnitsLine>
           </InformationLine>
         )}

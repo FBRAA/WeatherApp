@@ -32,7 +32,7 @@ const FlexRowContainer = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-  `
+`
 
 const TodaysHighlightsHeader = styled.div`
   font-weight: bold;
@@ -41,7 +41,7 @@ const TodaysHighlightsHeader = styled.div`
     @media (max-width: 815px) {
     padding: 1rem 0 1rem 0;
   }  
-  `
+`
 
 const RightSide = ({ unitsObj, setUnitsObj }) => {
   const weekData = useSelector((store) => store.forecast.weekData)

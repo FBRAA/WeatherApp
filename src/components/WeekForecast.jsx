@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import React from 'react';
 import { useSelector } from 'react-redux'
 import ForecastIcon from './ForecastIcon'
+import makeWeekDay from '../functions/makeWeekDay';
+import makeDate from '../functions/makeDate';
 
 const FlexRowContainer = styled.div`
   display: flex;
@@ -9,25 +11,7 @@ const FlexRowContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
 `
-
-const WeekForecast = ({ setChosenDay }) => {
-  const makeWeekDay = (dt) => {
-    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-    return (
-      days[
-        new Date(
-          dt
-           * 1000,
-        ).getDay()]);
-  }
-  const makeDate = (dt) => (
-    new Date(dt * 1000).getDate()
-  )
-  const weekData = (useSelector((store) => store.forecast.weekData))
-  const onClick = (index) => {
-    setChosenDay(index)
-  }
-  const PrettyDiv = styled.div`
+const PrettyDiv = styled.div`
     height: 7rem;
     width: 6rem;
     background-color: white;
@@ -44,11 +28,14 @@ const WeekForecast = ({ setChosenDay }) => {
       margin-bottom: 0.5rem;
   }  
   `;
+
+const WeekForecast = ({ setChosenDay }) => {
+  const weekData = (useSelector((store) => store.forecast.weekData))
   return (
     <FlexRowContainer>
       {weekData && weekData.map((elem, index) => (
         <PrettyDiv
-          onClick={() => onClick(index)}
+          onClick={() => setChosenDay(index)}
         >
           <div>{`${makeWeekDay(elem.dt)}, ${makeDate(elem.dt)}`}</div>
           <ForecastIcon mainWeather={elem.mainWeather} />

@@ -1,19 +1,15 @@
 const filterData = (data) => {
   const necessaryData = {
 
-    city: data.name,
+    mainWeather: data.weather[0].main,
+    currentTemp: data.main.temp,
     weatherType: data.weather[0].description,
-    temp: data.main.temp,
-    humidity: data.main.humidity,
-    pressure: data.main.pressure,
-    windSpeed: data.wind.speed,
-    windDir: data.wind.deg,
-    lon: data.coord.lon,
-    lat: data.coord.lat,
-    main: data.weather[0].main,
-    feelsLike: data.main.feels_like,
+    fetchedCity: data.name,
+    cityLon: data.coord.lon,
+    cityLat: data.coord.lat,
     sunrise: data.sys.sunrise,
     sunset: data.sys.sunset,
+    windDir: data.wind.deg,
   }
 
   return necessaryData
