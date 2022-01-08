@@ -10,8 +10,8 @@ const filterForecast = (data) => {
     humidity: elem.humidity,
     uvi: elem.uvi,
     windSpeed: elem.wind_speed,
-    feels_like: elem.feels_like.day,
-    wind_deg: elem.wind_deg,
+    feelsLike: elem.feels_like.day,
+    windDeg: elem.wind_deg,
   }))
   return weekData
 }

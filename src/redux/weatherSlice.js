@@ -15,19 +15,6 @@ export const weatherSlice = createSlice({
   initialState: {
     isLoading: false,
     data: [],
-    city: '',
-    currentTemp: '',
-    main: '',
-    weatherType: '',
-    humidity: '',
-    pressure: '',
-    windSpeed: '',
-    lon: '30.2642',
-    lat: '59.8944',
-    feelsLike: '',
-    sunrise: '',
-    sunset: '',
-    windDir: '',
   },
   extraReducers: {
     [getWeather.pending]: (state) => {
@@ -36,36 +23,10 @@ export const weatherSlice = createSlice({
     [getWeather.fulfilled]: (state, action) => {
       state.isLoading = false
       state.data = action.payload
-      state.city = action.payload.city
-      state.weatherType = action.payload.weatherType
-      state.currentTemp = action.payload.temp
-      state.humidity = action.payload.humidity
-      state.pressure = action.payload.pressure
-      state.windSpeed = action.payload.windSpeed
-      state.lon = action.payload.lon
-      state.lat = action.payload.lat
-      state.main = action.payload.main
-      state.feelsLike = action.payload.feelsLike
-      state.sunrise = action.payload.sunrise
-      state.sunset = action.payload.sunset
-      state.windDir = action.payload.windDir
     },
     [getWeather.rejected]: (state, action) => {
       state.isLoading = false
       state.data = action.payload
-      state.city = action.payload.city
-      state.weatherType = action.payload.weatherType
-      state.currentTemp = action.payload.temp
-      state.humidity = action.payload.humidity
-      state.pressure = action.payload.pressure
-      state.windSpeed = action.payload.windSpeed
-      state.lon = action.payload.lon
-      state.lat = action.payload.lat
-      state.main = action.payload.main
-      state.feelsLike = action.payload.feelsLike
-      state.sunrise = action.payload.sunrise
-      state.sunset = action.payload.sunset
-      state.windDir = action.payload.windDir
     },
   },
 
