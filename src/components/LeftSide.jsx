@@ -8,6 +8,8 @@ import { getWeather } from '../redux/weatherSlice'
 import { getForecast } from '../redux/forecastSlice'
 import WeatherIcon from './WeatherIcon'
 import windMeter from '../images/windMeter.jpg'
+import capitalizedString from '../functions/capitalizedString'
+import SpbString from '../constants/SpbString'
 
 const key = process.env.REACT_APP_API_KEY
 
@@ -91,20 +93,17 @@ const BottomLine = styled.div`
 
 const LeftSide = ({ unitsObj }) => {
   const dispatch = useDispatch()
-  const capitalizedString = (string) => string.charAt(0).toUpperCase() + string.slice(1)
   // const isLoading = useSelector((store) => store.weather.isLoading)
   // const weatherData = useSelector((store) => store.weather.data)
-  const { units } = unitsObj
-  const { degSymbol } = unitsObj
+  const { units, degSymbol } = unitsObj
   const mainWeather = useSelector((store) => store.weather.main)
   const currentTemp = useSelector((store) => store.weather.currentTemp)
   const weatherType = useSelector((store) => store.weather.weatherType)
   const cityLat = useSelector((store) => store.weather.lat)
   const cityLon = useSelector((store) => store.weather.lon)
   const fetchedCity = useSelector((store) => store.weather.city)
-  const city = 'Saint Petersburg'
   const [inputCity, setInputCity] = useState('')
-  const cityURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&APPID=${key}`
+  const cityURL = `https://api.openweathermap.org/data/2.5/weather?q=${SpbString}&units=${units}&APPID=${key}`
   const inputCityURL = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=${units}&APPID=${key}`
   const inputCityForecastURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLon}&units=${units}&exclude=minutely,hourly,alerts&appid=${key}`
   const handleClick = () => {
