@@ -1,10 +1,11 @@
 import styled from 'styled-components'
-import React from 'react';
+import React, { useContext } from 'react';
 import { useSelector } from 'react-redux'
 import HighlightsIcon from './HighlightsIcon';
 import UVicon from './UVicon';
 import WindIcon from './WindIcon';
 import windDirection from '../functions/windDirections';
+import UnitsContext from '../context/UnitsContext';
 
 const FlexRowContainer = styled.div`
   display: flex;
@@ -57,7 +58,7 @@ const WindRotater = styled.div`
     margin-right: 1rem;
   `
 
-const PrettyHighlights = ({ chosenDay, unitsObj }) => {
+const PrettyHighlights = ({ chosenDay }) => {
   const weekData = useSelector((store) => store.forecast.weekData)
   // const isLoading = useSelector((store) => store.forecast.isLoading)
   const {
@@ -70,6 +71,8 @@ const PrettyHighlights = ({ chosenDay, unitsObj }) => {
     feelsLike,
     windDeg,
   } = weekData[chosenDay]
+
+  const { unitsObj } = useContext(UnitsContext)
   const { degSymbol, windSymbol } = unitsObj
 
   return (

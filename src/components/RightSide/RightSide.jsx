@@ -43,18 +43,18 @@ const TodaysHighlightsHeader = styled.div`
   }  
 `
 
-const RightSide = ({ unitsObj, setUnitsObj }) => {
+const RightSide = () => {
   const weekData = useSelector((store) => store.forecast.weekData)
   const [chosenDay, setChosenDay] = useState(0)
 
   return (
     <RightStyledContainer>
-      <TopRightRow unitsObj={unitsObj} setUnitsObj={setUnitsObj} />
+      <TopRightRow />
       <WeekForecast chosenDay={chosenDay} setChosenDay={setChosenDay} />
       <FlexRowContainer>
         <TodaysHighlightsHeader> Day&#39;s Highlights </TodaysHighlightsHeader>
       </FlexRowContainer>
-      { weekData && <PrettyHighlights chosenDay={chosenDay} unitsObj={unitsObj} />}
+      { weekData && <PrettyHighlights chosenDay={chosenDay} />}
     </RightStyledContainer>
   )
 }

@@ -1,5 +1,5 @@
 /* eslint-disable react/function-component-definition */
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
 import { Divider } from '@mui/material'
@@ -10,6 +10,7 @@ import WeatherIcon from './WeatherIcon'
 import windMeter from '../images/windMeter.jpg'
 import capitalizedString from '../functions/capitalizedString'
 import SpbString from '../constants/SpbString'
+import UnitsContext from '../context/UnitsContext';
 
 const key = process.env.REACT_APP_API_KEY
 
@@ -91,7 +92,7 @@ const BottomLine = styled.div`
   }
 `
 
-const LeftSide = ({ unitsObj }) => {
+const LeftSide = () => {
   const dispatch = useDispatch()
   // const isLoading = useSelector((store) => store.weather.isLoading)
   const weatherData = useSelector((store) => store.weather.data)
@@ -103,6 +104,8 @@ const LeftSide = ({ unitsObj }) => {
     cityLon,
     fetchedCity,
   } = weatherData
+
+  const { unitsObj } = useContext(UnitsContext)
   const { units, degSymbol } = unitsObj
   const [inputCity, setInputCity] = useState('')
   const cityURL = `https://api.openweathermap.org/data/2.5/weather?q=${SpbString}&units=${units}&APPID=${key}`
