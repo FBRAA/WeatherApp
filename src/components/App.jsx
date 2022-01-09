@@ -1,6 +1,7 @@
 /* eslint-disable react/function-component-definition */
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import styled from 'styled-components'
+import UnitsContext from '../context/UnitsContext'
 import LeftSide from './LeftSide'
 import RightSide from './RightSide/RightSide'
 
@@ -28,12 +29,15 @@ const App = () => {
     degSymbol: '°C',
     windSymbol: 'meters/s',
   })
+  const value = useMemo(() => ({ unitsObj, setUnitsObj }), [unitsObj]);
 
   return (
-    <GeneralContainer>
-      <LeftSide unitsObj={unitsObj} />
-      <RightSide unitsObj={unitsObj} setUnitsObj={setUnitsObj} />
-    </GeneralContainer>
+    <UnitsContext.Provider value={value}>
+      <GeneralContainer>
+        <LeftSide unitsObj={unitsObj} />
+        <RightSide />
+      </GeneralContainer>
+    </UnitsContext.Provider>
   )
 }
 

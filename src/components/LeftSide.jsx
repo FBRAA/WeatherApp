@@ -1,17 +1,14 @@
 /* eslint-disable react/function-component-definition */
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
 import { Divider } from '@mui/material'
 import Input from './Input'
 import { getWeather } from '../redux/weatherSlice'
-import { getForecast } from '../redux/forecastSlice'
 import WeatherIcon from './WeatherIcon'
 import windMeter from '../images/windMeter.jpg'
 import capitalizedString from '../functions/capitalizedString'
-import SpbString from '../constants/SpbString'
-
-const key = process.env.REACT_APP_API_KEY
+import UnitsContext from '../context/UnitsContext';
 
 // const Primer = styled.div`
 //   ${({ dates }) => dates &&
@@ -91,37 +88,27 @@ const BottomLine = styled.div`
   }
 `
 
-const LeftSide = ({ unitsObj }) => {
+const LeftSide = () => {
   const dispatch = useDispatch()
   // const isLoading = useSelector((store) => store.weather.isLoading)
-  const weatherData = useSelector((store) => store.weather.data)
+  const weatherData = useSelector((store) => store.weather.weatherData)
   const {
     mainWeather,
     currentTemp,
     weatherType,
-    cityLat,
-    cityLon,
     fetchedCity,
   } = weatherData
+
+  const { unitsObj } = useContext(UnitsContext)
   const { units, degSymbol } = unitsObj
   const [inputCity, setInputCity] = useState('')
-  const cityURL = `https://api.openweathermap.org/data/2.5/weather?q=${SpbString}&units=${units}&APPID=${key}`
-  const inputCityURL = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=${units}&APPID=${key}`
-  const inputCityForecastURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLon}&units=${units}&exclude=minutely,hourly,alerts&appid=${key}`
 
   const handleClick = () => {
-    dispatch(getWeather(inputCityURL))
+    dispatch(getWeather({ inputCity, units }))
   }
   useEffect(() => {
-    if (inputCity) {
-      dispatch(getWeather(inputCityURL))
-    } else {
-      dispatch(getWeather(cityURL))
-    }
+    dispatch(getWeather({ inputCity, units }))
   }, [units])
-  useEffect(() => {
-    dispatch(getForecast(inputCityForecastURL))
-  }, [cityLat, cityLon, units])
 
   return (
     <LeftStyledContainer>
