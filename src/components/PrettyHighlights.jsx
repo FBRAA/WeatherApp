@@ -59,7 +59,7 @@ const WindRotater = styled.div`
   `
 
 const PrettyHighlights = ({ chosenDay }) => {
-  const weekData = useSelector((store) => store.forecast.weekData)
+  const weekData = useSelector((store) => store.weather.forecastData)
   // const isLoading = useSelector((store) => store.forecast.isLoading)
   const {
     windSpeed,

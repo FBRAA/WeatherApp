@@ -16,7 +16,7 @@ const UVicon = ({ uvi }) => {
     { uvi: 3, src: yelSun },
     { uvi: 0, src: grSun },
   ]
-  const choosePic = allTypes.find((type) => uvi > type.uvi)
+  const choosePic = allTypes.find((type) => uvi >= type.uvi)
   return (
     <ImageTag src={choosePic.src} alt="UVI icon" />
   )

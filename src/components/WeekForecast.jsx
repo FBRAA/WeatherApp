@@ -30,7 +30,7 @@ const PrettyDiv = styled.div`
   `;
 
 const WeekForecast = ({ setChosenDay }) => {
-  const weekData = (useSelector((store) => store.forecast.weekData))
+  const weekData = useSelector((store) => store.weather.forecastData)
   return (
     <FlexRowContainer>
       {weekData && weekData.map((elem, index) => (

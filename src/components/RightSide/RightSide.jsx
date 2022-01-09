@@ -44,7 +44,7 @@ const TodaysHighlightsHeader = styled.div`
 `
 
 const RightSide = () => {
-  const weekData = useSelector((store) => store.forecast.weekData)
+  const weekData = useSelector((store) => store.weather.forecastData)
   const [chosenDay, setChosenDay] = useState(0)
 
   return (
