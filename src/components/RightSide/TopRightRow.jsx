@@ -14,10 +14,10 @@ const TodaysHighlightsHeader = styled.div`
   margin-right: auto;
   margin-left: 1rem;
 `
-const TopRightRow = ({ unitsObj, setUnitsObj }) => (
+const TopRightRow = () => (
   <FlexRowContainer>
     <TodaysHighlightsHeader>Week Forecast</TodaysHighlightsHeader>
-    <Switch unitsObj={unitsObj} setUnitsObj={setUnitsObj} />
+    <Switch />
     <AvatarImage />
   </FlexRowContainer>
 )
