@@ -14,5 +14,5 @@ export default {
   Snow,
   Clear,
   Clouds,
-  [undefined]: Mist,
+  Mist,
 }
