@@ -12,7 +12,7 @@ const ImageTag = styled.img`
 `
 
 const WeatherIcon = ({ mainWeather }) => (
-  <ImageTag src={allWeatherTypes[mainWeather] || allWeatherTypes.Mist} alt="weather icon" />
+  <ImageTag src={allWeatherTypes[mainWeather]} alt="weather icon" />
 )
 
 export default WeatherIcon

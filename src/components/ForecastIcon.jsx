@@ -8,7 +8,7 @@ const ImageTag = styled.img`
     object-fit: cover;
   `
 const ForecastIcon = ({ mainWeather }) => (
-  <ImageTag src={allWeatherTypes[mainWeather] || allWeatherTypes.Mist} alt="weather type" />
+  <ImageTag src={allWeatherTypes[mainWeather]} alt="weather type" />
 )
 
 export default ForecastIcon

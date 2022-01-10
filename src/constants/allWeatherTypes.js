@@ -15,4 +15,12 @@ export default {
   Clear,
   Clouds,
   Mist,
+  Smoke: Mist,
+  Haze: Mist,
+  Dust: Mist,
+  Fog: Mist,
+  Sand: Mist,
+  Ash: Mist,
+  Squall: Mist,
+  Tornado: Mist,
 }
