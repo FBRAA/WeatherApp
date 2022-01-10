@@ -41,7 +41,7 @@ const CoolHeading = styled.div`
 const InformationLine = styled.div`
   font-size: 2.5rem;
   display: flex;
-  align-items: baseline;
+  align-items: flex-end;
   justify-content: space-between;
   `
 const SunLine = styled.div`
