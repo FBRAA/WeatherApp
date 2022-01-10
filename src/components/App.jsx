@@ -34,7 +34,7 @@ const App = () => {
   return (
     <UnitsContext.Provider value={value}>
       <GeneralContainer>
-        <LeftSide unitsObj={unitsObj} />
+        <LeftSide />
         <RightSide />
       </GeneralContainer>
     </UnitsContext.Provider>
