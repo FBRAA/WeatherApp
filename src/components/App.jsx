@@ -14,6 +14,8 @@ const GeneralContainer = styled.div`
   background-color: white;
   border-radius: 3rem;
   margin: auto;
+  box-shadow: rgb(64 60 67 / 16%) 0px 2px 5px 1px;
+
   @media (max-width: 815px) {
     display: flex;
     flex-direction: column;
