@@ -26,6 +26,7 @@ const PrettyDiv = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   padding: 1rem 2rem 1rem 2rem;
+  box-shadow: rgb(64 60 67 / 16%) 0px 2px 5px 1px;
   @media (max-width: 815px) {
     height: 10.5rem;
     width: 14rem;

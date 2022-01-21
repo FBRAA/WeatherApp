@@ -82,6 +82,7 @@ const BottomLine = styled.div`
   width: 20rem;
   height: 5rem;
   border-radius: 1rem;
+  box-shadow: rgb(64 60 67 / 16%) 0px 2px 5px 1px;
   @media (max-width: 815px) {
     margin-top: 1rem;
     width: 100%;
